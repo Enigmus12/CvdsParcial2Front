@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/payment-service/pay";
+const API_URL = "https://cvdsparcial-cscrbwgcdhebh5eg.canadacentral-01.azurewebsites.net/payment-service/pay";
 
 interface User {
   id: string;

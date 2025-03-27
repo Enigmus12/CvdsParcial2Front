@@ -20,7 +20,7 @@ interface Product {
 
 
 const ConsultarProductos: React.FC = () => {
-  const [Payment, setBookings] = useState<Product[]>([]);
+  const [Payment, setpayments] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [userId, setUserId] = useState<string>('');
@@ -34,10 +34,10 @@ const ConsultarProductos: React.FC = () => {
     setLoading(true);
     setError(null);
 
-    axios.get<Product[]>(`http://localhost:8000/payment-service/user/${userId}`)
+    axios.get<Product[]>(`https://cvdsparcial-cscrbwgcdhebh5eg.canadacentral-01.azurewebsites.net/payment-service/user/${userId}`)
       .then(response => {
         console.log("Datos recibidos:", response.data);
-        setBookings(response.data);
+        setpayments(response.data);
         setLoading(false);
       })
       .catch(error => {
